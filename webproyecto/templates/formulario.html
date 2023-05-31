@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register" d-flex>
+    <h4>Formulario Registro</h4>
+    <form id="formulario" action="" method="post" onsubmit="return validaciones()">
+      <input class="controls" type="text" class="col-peque" name="" id="" required placeholder="Ingrese su Nombre" title="ingreso datos que no corresponden">
+      <input class="controls" type="text" class="col-peque" name="" id="" required placeholder="Ingrese su Apellido" title="ingreso datos que no corresponden">
+      <input class="controls" type="text" class="col-gra" required placeholder="ingrese nombre usuario" name="" id="">
+      <input class="controls" type="email" class="col-peque" name="" id="" required placeholder="Ingrese su Correo">
+      <input class="controls" type="password" minlength="5" maxlength="10" class="col-peque" name="" id="txtPass1" required placeholder="Ingrese su Contraseña">
+      <input class="controls" type="password" minlength="5" maxlength="10" class="col-peque" name="" id="txtPass2" required placeholder="Repita su Contraseña">
+      <input class="controls" type="submit" class="col-gra" value="registrarse" href="index.html">
+      <a class="controls-log" href="{% url 'INI' %}" class="btn btn-primary">Iniciar</a>
+      <p><a href="{% url 'INI' %}">¿Ya tengo Cuenta?</a></p>
+    </form>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

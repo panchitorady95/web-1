@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+  <title>Formulario Inicio</title>
+</head>
+<body>
+  <section class="form-log">
+    <h4>Formulario Inicio</h4>
+    <form form id="inicio" action="" method="post" onsubmit="return validaciones()">
+      <input class="controls-log" type="email" class="col-peque" name="correo" id="correo" required placeholder="Ingrese su Correo">
+      <input class="controls" type="password" minlength="5" maxlength="10" class="col-peque" name="" id="txtPass" required placeholder="Ingrese su Contraseña">
+    </form>
+    <a href="index.html"class="controls-log" class="btn btn-primary">Iniciar</a>
+    <p>
+      <a href="inicio.html">¿Olvido su clave?</a>
+    </p>
+    <a href="formulario.html">para registrarse</a>
+  </section>
+

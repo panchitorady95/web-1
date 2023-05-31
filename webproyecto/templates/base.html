@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamete Kudasai</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block css %}
+    
+    {% endblock css %}
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <h1 >Yamete Kudasai.</h1>
+            <header>
+                <a href="{% url 'FORMU' %}" target="_blank"> <!--FORMULARIO-->
+                  <img class="img-5" src="{% static 'img/user-log.png' %}" alt="" width="40px" height="40px">
+                </a>
+                <a href="https://www.instagram.com/accounts/login/two_factor?next=%2F" target="_blank">
+                    <img class="img-1" src="{% static 'img/inta-log.png' %}" alt="" width="40px" height="40px">
+                </a>
+                <a href="https://es-la.facebook.com/" target="_blank">
+                    <img class="img-2" src="{% static 'img/face-log.png' %}" alt="" width="40px" height="40px">
+                </a>
+                <a href="https://www.youtube.com/watch?v=yeSj7xGDtIg" target="_blank">
+                    <img class="img-3" src="{% static 'img/dis-log.png' %}" alt="" width="40px" height="40px">
+                </a>
+                <a href="https://www.youtube.com/watch?v=yeSj7xGDtIg" target="_blank">
+                    <img class="img-4" src="{% static 'img/twe-log.png' %}" alt="" width="40px" height="40px">
+                </a>
+            </header>
+        </div>
+    </nav>
+</body>
+</html>
