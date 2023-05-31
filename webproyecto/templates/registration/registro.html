@@ -1,7 +1,6 @@
 {% extends '../base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block contenido %}   
 <div class="container-fluid mt-4 mb-4">
     <div class="row">
@@ -9,18 +8,17 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
-                    <h2>Ingresa tus datos</h2>
+                    <h2>Registro de usuario</h2>
                     <hr>
                     <form action="" method="POST">
                         {% csrf_token %}
                         {{ form | crispy }}
-                        <a  type="button"  class="btn btn-primary  form-reg" href="{% url 'index' %}">Ir al Inicio</a> |
-                        <a type="button"  class="btn btn-warning  form-reg" href="{% url 'registro' %}">Registrarse</a>
+                        <a type="button"  class="btn btn-primary  form-reg" href="{% url 'index' %}">Ir al Inicio</a> |
+                        <a type="button"  class="btn btn-warning  form-reg" href="{% url 'login' %}">Iniciar Sesión</a>
                         <div class="d-flex justify-content-end">
                             &nbsp;
-                            <input type="submit" value="ingresar" class="btn btn-success float-right">
+                            <input type="submit" value="Registar" class="btn btn-success float-right">
                         </div>
-                        
                     </form>
                 </div>
             </div>

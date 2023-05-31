@@ -6,10 +6,12 @@ from .views import *
 #nuevo
 from . import views
 urlpatterns = [
-    path('',index,name='IND'),
-    path('formulario/',formulario,name='FORMU'),
-    path('inicio/',inicio,name='INI'),
+    path('', index, name='index'),
+    path('formulario/', formulario,name='FORMU'),
+    path('inicio/', inicio,name='inicio'),
     path('galeria/', views.galeria, name='galeria'),
-    path('logout',LogoutView.as_view(), name='logout'),
+    path('logout', LogoutView.as_view(), name='logout'),
+    path('registro/', registro, name='registro'),
+    path('login/', login, name='login'),
 ]
 

@@ -25,4 +25,13 @@ class Imagen(models.Model):
         return self.nombre
 
 
-    
+class Usuario(models.Model):
+    run=models.IntegerField(null=False, blank=True)
+    nombre=models.CharField(max_length=30)
+    correo=models.CharField(max_length=30)
+    numero=models.CharField(max_length=12)
+    create_at = models.DateField(auto_now_add=True)
+    update_at = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.nombre
