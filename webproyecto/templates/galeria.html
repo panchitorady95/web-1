@@ -2,26 +2,10 @@
 {% load static %}
 
 
+
+
+
 {% block contenedor %}
-      <!-- bienvenidos -->
-      <!DOCTYPE html>
-<html>
-<head>
-    <title>Galería</title>
-</head>
-<body>
-    <h1>Galería</h1>
-    {% for imagen in imagenes %}
-        <div>
-            <img src="{{ imagen.imagen.url }}" alt="{{ imagen.descripcion }}">
-            <p>{{ imagen.descripcion }}</p>
-            <p>Subido por: {{ imagen.usuario }}</p>
-        </div>
-    {% empty %}
-        <p>No hay imágenes disponibles.</p>
-    {% endfor %}
-</body>
-</html>
 
 
 {% endblock contenedor %}

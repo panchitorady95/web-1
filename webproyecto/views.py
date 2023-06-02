@@ -75,3 +75,5 @@ def cargar_imagen(request):
 def galeria(request):
     imagenes = Imagen.objects.all()
     return render(request, 'galeria.html', {'imagenes': imagenes})
+
+
