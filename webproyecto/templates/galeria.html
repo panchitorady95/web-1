@@ -4,18 +4,25 @@
 
 {% block contenedor %}
       <!-- bienvenidos -->
-        <section id="bienvenido">
-            <h2>Galeria de Masotas que buscan un hogar</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quas eius consequatur maiores ratione, tenetur corrupti consequuntur odio vero commodi illo a aperiam. Sequi mollitia praesentium modi distinctio ullam maiores!</p>            
-        </section>
-         <h1>Galería de imágenes</h1>
-
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Galería</title>
+</head>
+<body>
+    <h1>Galería</h1>
     {% for imagen in imagenes %}
-        <img src="{{ imagen.imagen.url }}" alt="{{ imagen.nombre }}">
+        <div>
+            <img src="{{ imagen.imagen.url }}" alt="{{ imagen.descripcion }}">
+            <p>{{ imagen.descripcion }}</p>
+            <p>Subido por: {{ imagen.usuario }}</p>
+        </div>
+    {% empty %}
+        <p>No hay imágenes disponibles.</p>
     {% endfor %}
-
-
-
+</body>
+</html>
 
 
 {% endblock contenedor %}
+

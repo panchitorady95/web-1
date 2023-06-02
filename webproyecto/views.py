@@ -1,5 +1,4 @@
 from django.shortcuts import render
-#nuevo
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as user_login
@@ -7,6 +6,12 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
 from .models import * 
 from webproyecto.form import *
+from django.contrib.auth.models import User
+from .form import ImagenForm
+from .models import Imagen
+
+
+
 
 
 # Create your views here.
@@ -43,3 +48,30 @@ def registro(request):
 def login(request):
     messages.success(request, "Has iniciado correctamente")
     return render(request, 'registration/login.html')
+
+
+def index(request):
+    nombre_usuario = None
+    if request.user.is_authenticated:
+        nombre_usuario = request.user.username
+
+    return render(request, 'index.html', {'nombre_usuario': nombre_usuario})
+
+#nuevo
+def cargar_imagen(request):
+    if request.method == 'POST':
+        form = ImagenForm(request.POST, request.FILES)
+        if form.is_valid():
+            imagen = form.save(commit=False)
+            imagen.usuario = request.user
+            imagen.save()
+            return redirect('galeria')
+    else:
+        form = ImagenForm()
+
+    return render(request, 'cargar_imagen.html', {'form': form})
+
+#nuevo1.2
+def galeria(request):
+    imagenes = Imagen.objects.all()
+    return render(request, 'galeria.html', {'imagenes': imagenes})

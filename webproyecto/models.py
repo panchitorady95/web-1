@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class categoria(models.Model):
     nombre=models.CharField(primary_key=True,max_length=45)
@@ -10,7 +11,7 @@ class categoria(models.Model):
 class Anime(models.Model):
     idAnime = models.IntegerField(primary_key=True)
     nombre=models.CharField(max_length=45)
-    año=models.IntegerField()
+    anio=models.IntegerField()
     descripcion=models.TextField()
     categoria=models.ForeignKey(categoria,on_delete=models.CASCADE)
 #Cosas de prueba 
@@ -35,3 +36,20 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+
+#nuevo
+class Imagen(models.Model):
+    imagen = models.ImageField(upload_to='fotos/')
+    descripcion = models.CharField(max_length=200)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.descripcion
+
+    
+
+
+
+
+    

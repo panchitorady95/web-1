@@ -46,6 +46,9 @@
             </li>
             {% endif %}  
             </ul>
+
+            <!-- Nuevo-->
+
             <form class="d-flex my-2 my-lg-0">
               <input class="form-control me-sm-2" type="text" placeholder="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -54,6 +57,10 @@
     </div>
   </nav>
   <header>
+    {% if nombre_usuario %}
+        <h1 class="text-center">Bienvenido, {{ nombre_usuario }}</h1>
+    {% else %}
+    {% endif %}
     <h1 class="text-center">Yamete Kudasai.</h1>
   </header>
     <div class="container">

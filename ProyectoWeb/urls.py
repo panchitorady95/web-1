@@ -22,3 +22,4 @@ urlpatterns = [
     path('',include('webproyecto.urls')),
     path('accounts/', include('django.contrib.auth.urls')), #Habilitar vistas propias de django tales como el LOGIN
 ]
+
